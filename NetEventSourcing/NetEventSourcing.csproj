@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventSourcing.CQRS\EventSourcing.CQRS.csproj" />
     <ProjectReference Include="..\NetEventSourcing.Configuration\NetEventSourcing.Configuration.csproj" />
   </ItemGroup>
 

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EventSourcing.CQRS.Commands;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NetEventSourcing.Configuration;
 
 namespace NetEventSourcing.Controllers
 {
@@ -20,6 +22,7 @@ namespace NetEventSourcing.Controllers
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
+            ServiceLocator.CommandBus.Send(new CreateItemCommand(Guid.NewGuid(), item.Title, item.Description, -1, item.From, item.To));
             _logger = logger;
         }
 
