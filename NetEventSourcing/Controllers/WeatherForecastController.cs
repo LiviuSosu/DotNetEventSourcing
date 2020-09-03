@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EventSourcing.CQRS.Commands;
+using EventSourcing.CQRS.Reporting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NetEventSourcing.Configuration;
@@ -21,9 +22,16 @@ namespace NetEventSourcing.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        {    
+            _logger = logger;
+        }
+
+        [HttpPost]
+        //[Route("login")]
+        public ActionResult Add(DiaryItemDto item)
         {
             ServiceLocator.CommandBus.Send(new CreateItemCommand(Guid.NewGuid(), item.Title, item.Description, -1, item.From, item.To));
-            _logger = logger;
+            return Ok();
         }
 
         [HttpGet]
