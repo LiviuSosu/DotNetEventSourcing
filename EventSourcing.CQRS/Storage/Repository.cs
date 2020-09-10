@@ -53,7 +53,7 @@ namespace EventSourcing.CQRS.Storage
             {
                 events = _storage.GetEvents(id);
             }
-            var obj = new T();
+            var obj = new T();//commit test
             if (memento != null)
                 ((IOriginator)obj).SetMemento(memento);
 
