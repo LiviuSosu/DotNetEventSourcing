@@ -1,6 +1,7 @@
 ﻿using EventSourcing.CQRS.Domain;
+using EventSourcing.CQRS.Domain.Mementos;
 using EventSourcing.CQRS.Events;
-using EventSourcing.CQRS.Mementos;
+using EventSourcing.CQRS.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

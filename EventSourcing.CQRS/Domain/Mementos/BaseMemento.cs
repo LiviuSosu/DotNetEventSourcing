@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EventSourcing.CQRS.Mementos
+namespace EventSourcing.CQRS.Domain.Mementos
 {
     public class BaseMemento
     {
