@@ -1,6 +1,7 @@
 ﻿using EventSourcing.CQRS.Messaging;
 using EventSourcing.CQRS.Reporting;
 using EventSourcing.CQRS.Storage;
+using EventSourcing.CQRS.Utils;
 using StructureMap;
 
 namespace NetEventSourcing.Configuration

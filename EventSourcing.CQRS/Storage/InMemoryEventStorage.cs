@@ -58,7 +58,7 @@ namespace EventSourcing.CQRS.Storage
             }
             foreach (var @event in uncommittedChanges)
             {
-                var desEvent = Converter.ChangeTo(@event, @event.GetType());
+                var desEvent = Utils.Converter.ChangeTo(@event, @event.GetType());
                 _eventBus.Publish(desEvent);
             }
         }
