@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EventSourcing.CQRS.Domain
 {
@@ -45,7 +44,7 @@ namespace EventSourcing.CQRS.Domain
         {
             dynamic d = this;
 
-            d.Handle(Converter.ChangeTo(@event, @event.GetType()));
+            d.Handle(Utils.Converter.ChangeTo(@event, @event.GetType()));
             if (isNew)
             {
                 _changes.Add(@event);
