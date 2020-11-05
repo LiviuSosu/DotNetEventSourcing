@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EventSourcing.CQRS.Domain
 {
@@ -52,3 +51,4 @@ namespace EventSourcing.CQRS.Domain
             }
         }
     }
+}

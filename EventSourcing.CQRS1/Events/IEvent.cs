@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EventSourcing.CQRS.Commands
+namespace EventSourcing.CQRS.Events
 {
-    public interface ICommand
+    public interface IEvent
     {
         Guid Id { get; }
     }
