@@ -52,3 +52,4 @@ namespace EventSourcing.CQRS.Domain
             }
         }
     }
+}
