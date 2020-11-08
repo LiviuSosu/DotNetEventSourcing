@@ -31,6 +31,11 @@ namespace NetEventSourcing.Configuration
         {
             get { return _commandBus; }
         }
+
+        public static IReportDatabase ReportDatabase
+        {
+            get { return _reportDatabase; }
+        }
     }
 
     static class ContainerBootstrapper

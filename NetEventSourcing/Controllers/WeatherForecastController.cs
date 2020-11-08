@@ -26,25 +26,45 @@ namespace NetEventSourcing.Controllers
             _logger = logger;
         }
 
+        //[HttpGet]
+        //public IEnumerable<WeatherForecast> Get()
+        //{
+        //    var rng = new Random();
+        //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        //    {
+        //        Date = DateTime.Now.AddDays(index),
+        //        TemperatureC = rng.Next(-20, 55),
+        //        Summary = Summaries[rng.Next(Summaries.Length)]
+        //    })
+        //    .ToArray();
+        //}
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return Ok(ServiceLocator.ReportDatabase.GetItems());
+        }
+
         [HttpPost]
-        //[Route("login")]
         public ActionResult Add(DiaryItemDto item)
         {
             ServiceLocator.CommandBus.Send(new CreateItemCommand(Guid.NewGuid(), item.Title, item.Description, -1, item.From, item.To));
             return Ok();
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+        //[HttpPut]
+        //public ActionResult Edit(DiaryItemDto item)
+        //{
+        //   ServiceLocator.CommandBus.Send(new ChangeItemCommand(item.Id, item.Title, item.Description, item.From, item.To, item.Version));
+        //    return Ok();
+        //}
+
+        //[HttpDelete]
+        //public ActionResult Delete(Guid id)
+        //{
+        //    var item = ServiceLocator.ReportDatabase.GetById(id);
+        //    ServiceLocator.CommandBus.Send(new DeleteItemCommand(item.Id, item.Version));
+        //    return Ok();
+        //}
     }
 }
