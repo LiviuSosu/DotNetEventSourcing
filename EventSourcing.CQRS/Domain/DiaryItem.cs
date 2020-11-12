@@ -42,6 +42,26 @@ namespace EventSourcing.CQRS.Domain
             return new DiaryItemMemento(Id, Title, Description, From, To, Version);
         }
 
+        public void ChangeTitle(string title)
+        {
+            ApplyChange(new ItemRenamedEvent(Id, title));
+        }
+
+        public void ChangeDescription(string description)
+        {
+            ApplyChange(new ItemDescriptionChangedEvent(Id, description));
+        }
+
+        public void ChangeFrom(DateTime from)
+        {
+            ApplyChange(new ItemFromChangedEvent(Id, from));
+        }
+
+        public void ChangeTo(DateTime to)
+        {
+            ApplyChange(new ItemToChangedEvent(Id, to));
+        }
+
         public void SetMemento(BaseMemento memento)
         {
             Title = ((DiaryItemMemento)memento).Title;
