@@ -1,4 +1,5 @@
 ﻿using EventSourcing.CQRS.Domain.Mementos;
+using EventSourcing.CQRS.EventHandlers;
 using EventSourcing.CQRS.Events;
 using EventSourcing.CQRS.Storage.Memento;
 using System;
@@ -52,15 +53,21 @@ namespace EventSourcing.CQRS.Domain
             ApplyChange(new ItemDescriptionChangedEvent(Id, description));
         }
 
-        public void ChangeFrom(DateTime from)
+
+        public void Handle(ItemDescriptionChangedEvent e)
         {
-            ApplyChange(new ItemFromChangedEvent(Id, from));
+            Description = e.Description;
         }
 
-        public void ChangeTo(DateTime to)
-        {
-            ApplyChange(new ItemToChangedEvent(Id, to));
-        }
+        //public void ChangeFrom(DateTime from)
+        //{
+        //    ApplyChange(new ItemFromChangedEvent(Id, from));
+        //}
+
+        //public void ChangeTo(DateTime to)
+        //{
+        //    ApplyChange(new ItemToChangedEvent(Id, to));
+        //}
 
         public void SetMemento(BaseMemento memento)
         {
