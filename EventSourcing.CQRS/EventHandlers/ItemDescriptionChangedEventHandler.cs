@@ -1,4 +1,5 @@
-﻿using EventSourcing.CQRS.Reporting;
+﻿using EventSourcing.CQRS.Events;
+using EventSourcing.CQRS.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Text;
