@@ -10,6 +10,7 @@ namespace EventSourcing.CQRS.Domain
 {
     public class DiaryItem : AggregateRoot,
         IHandle<ItemCreatedEvent>,
+        IHandle<ItemDescriptionChangedEvent>,
         IOriginator
     {
         public string Title { get; set; }
