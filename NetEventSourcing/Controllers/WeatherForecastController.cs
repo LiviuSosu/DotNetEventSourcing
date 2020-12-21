@@ -52,8 +52,7 @@ namespace NetEventSourcing.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        [Route("/Edit")]
+        [HttpPut]
         public ActionResult Edit(DiaryItemDto item)
         {
             ServiceLocator.CommandBus.Send(new ChangeItemCommand(item.Id, item.Title, item.Description, item.From, item.To, item.Version));
