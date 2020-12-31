@@ -10,6 +10,7 @@ namespace EventSourcing.CQRS.Domain
 {
     public class DiaryItem : AggregateRoot,
         IHandle<ItemCreatedEvent>,
+        IHandle<ItemRenamedEvent>,
         IHandle<ItemDescriptionChangedEvent>,
         IOriginator
     {
@@ -78,6 +79,11 @@ namespace EventSourcing.CQRS.Domain
             From = ((DiaryItemMemento)memento).From;
             Description = ((DiaryItemMemento)memento).Description;
             Id = memento.Id;
+        }
+
+        public void Handle(ItemRenamedEvent e)
+        {
+            Title = e.Title;
         }
     }
 }
