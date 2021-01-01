@@ -12,6 +12,7 @@ namespace EventSourcing.CQRS.Domain
         IHandle<ItemCreatedEvent>,
         IHandle<ItemRenamedEvent>,
         IHandle<ItemDescriptionChangedEvent>,
+        IHandle<ItemToChangedEvent>,
         IOriginator
     {
         public string Title { get; set; }
@@ -66,10 +67,10 @@ namespace EventSourcing.CQRS.Domain
         //    ApplyChange(new ItemFromChangedEvent(Id, from));
         //}
 
-        //public void ChangeTo(DateTime to)
-        //{
-        //    ApplyChange(new ItemToChangedEvent(Id, to));
-        //}
+        public void ChangeTo(DateTime to)
+        {
+            ApplyChange(new ItemToChangedEvent(Id, to));
+        }
 
         public void SetMemento(BaseMemento memento)
         {
@@ -85,5 +86,12 @@ namespace EventSourcing.CQRS.Domain
         {
             Title = e.Title;
         }
+
+        public void Handle(ItemToChangedEvent e)
+        {
+            To = e.To;
+        }
+
+
     }
 }
