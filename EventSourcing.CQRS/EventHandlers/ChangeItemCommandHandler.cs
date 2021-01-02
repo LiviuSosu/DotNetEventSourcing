@@ -36,8 +36,8 @@ namespace EventSourcing.CQRS.EventHandlers
             if (aggregate.Description != command.Description)
                 aggregate.ChangeDescription(command.Description);
 
-            //if (aggregate.From != command.From)
-            //    aggregate.ChangeFrom(command.From);
+            if (aggregate.From != command.From)
+                aggregate.ChangeFrom(command.From);
 
             if (aggregate.To != command.To)
                 aggregate.ChangeTo(command.To);

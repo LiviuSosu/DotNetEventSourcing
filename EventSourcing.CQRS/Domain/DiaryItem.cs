@@ -13,6 +13,7 @@ namespace EventSourcing.CQRS.Domain
         IHandle<ItemRenamedEvent>,
         IHandle<ItemDescriptionChangedEvent>,
         IHandle<ItemToChangedEvent>,
+        IHandle<ItemFromChangedEvent>,
         IOriginator
     {
         public string Title { get; set; }
@@ -56,16 +57,14 @@ namespace EventSourcing.CQRS.Domain
             ApplyChange(new ItemDescriptionChangedEvent(Id, description));
         }
 
-
+        public void ChangeFrom(DateTime from)
+        {
+            ApplyChange(new ItemFromChangedEvent(Id, from));
+        }
         public void Handle(ItemDescriptionChangedEvent e)
         {
             Description = e.Description;
         }
-
-        //public void ChangeFrom(DateTime from)
-        //{
-        //    ApplyChange(new ItemFromChangedEvent(Id, from));
-        //}
 
         public void ChangeTo(DateTime to)
         {
@@ -92,6 +91,9 @@ namespace EventSourcing.CQRS.Domain
             To = e.To;
         }
 
-
+        public void Handle(ItemFromChangedEvent e)
+        {
+            From = e.From;
+        }
     }
 }
