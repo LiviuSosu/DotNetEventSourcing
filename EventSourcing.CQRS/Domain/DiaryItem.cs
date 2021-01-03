@@ -95,5 +95,15 @@ namespace EventSourcing.CQRS.Domain
         {
             From = e.From;
         }
+
+        public void Delete()
+        {
+            ApplyChange(new ItemDeletedEvent(Id));
+        }
+
+        public void Handle(ItemDeletedEvent e)
+        {
+
+        }
     }
 }

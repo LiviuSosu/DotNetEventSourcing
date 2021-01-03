@@ -59,12 +59,12 @@ namespace NetEventSourcing.Controllers
             return Ok();
         }
 
-        //[HttpDelete]
-        //public ActionResult Delete(Guid id)
-        //{
-        //    var item = ServiceLocator.ReportDatabase.GetById(id);
-        //    ServiceLocator.CommandBus.Send(new DeleteItemCommand(item.Id, item.Version));
-        //    return Ok();
-        //}
+        [HttpDelete]
+        public ActionResult Delete(Guid id)
+        {
+            var item = ServiceLocator.ReportDatabase.GetById(id);
+            ServiceLocator.CommandBus.Send(new DeleteItemCommand(item.Id, item.Version));
+            return Ok();
+        }
     }
 }
