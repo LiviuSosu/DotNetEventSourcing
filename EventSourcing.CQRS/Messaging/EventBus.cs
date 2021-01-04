@@ -1,8 +1,5 @@
 ﻿using EventSourcing.CQRS.Events;
 using EventSourcing.CQRS.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.Messaging
 {

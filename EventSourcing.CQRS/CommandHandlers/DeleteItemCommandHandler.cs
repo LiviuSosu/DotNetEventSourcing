@@ -2,8 +2,6 @@
 using EventSourcing.CQRS.Domain;
 using EventSourcing.CQRS.Storage;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.CommandHandlers
 {
@@ -30,7 +28,6 @@ namespace EventSourcing.CQRS.CommandHandlers
             var aggregate = _repository.GetById(command.Id);
             aggregate.Delete();
             _repository.Save(aggregate, aggregate.Version);
-
         }
     }
 }

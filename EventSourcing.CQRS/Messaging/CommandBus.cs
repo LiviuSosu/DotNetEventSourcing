@@ -1,9 +1,6 @@
 ﻿using EventSourcing.CQRS.Commands;
 using EventSourcing.CQRS.Exceptions;
 using EventSourcing.CQRS.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.Messaging
 {

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.Commands
 {
@@ -18,7 +16,6 @@ namespace EventSourcing.CQRS.Commands
             From = from;
             Description = description;
             Title = title;
-
         }
     }
 }

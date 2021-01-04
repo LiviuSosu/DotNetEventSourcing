@@ -1,7 +1,4 @@
-﻿using EventSourcing.CQRS.Events;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace EventSourcing.CQRS.Events
 {

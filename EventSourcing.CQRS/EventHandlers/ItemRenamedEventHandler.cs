@@ -1,8 +1,5 @@
 ﻿using EventSourcing.CQRS.Events;
 using EventSourcing.CQRS.Reporting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.EventHandlers
 {

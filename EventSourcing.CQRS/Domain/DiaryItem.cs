@@ -1,10 +1,7 @@
 ﻿using EventSourcing.CQRS.Domain.Mementos;
-using EventSourcing.CQRS.EventHandlers;
 using EventSourcing.CQRS.Events;
 using EventSourcing.CQRS.Storage.Memento;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.Domain
 {

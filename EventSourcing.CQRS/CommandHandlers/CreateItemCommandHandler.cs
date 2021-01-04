@@ -2,8 +2,6 @@
 using EventSourcing.CQRS.Domain;
 using EventSourcing.CQRS.Storage;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.CommandHandlers
 {

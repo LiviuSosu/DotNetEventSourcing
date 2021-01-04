@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EventSourcing.CQRS.Domain.Mementos
 {
@@ -10,7 +8,6 @@ namespace EventSourcing.CQRS.Domain.Mementos
         public string Description { get; internal set; }
         public DateTime From { get; internal set; }
         public DateTime To { get; internal set; }
-
 
         public int EventVersion { get; set; }
 
