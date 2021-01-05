@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "fe9fa368-dfcd-4c7a-9ad5-bc53a850fda0",
+		"name": "CQRS.Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"some TODO item\",\r\n    \"From\": \"2020-01-01\",\r\n    \"To\": \"2020-01-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44384/weatherforecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"some TODO item\",\r\n    \"From\": \"2019-02-01\",\r\n    \"To\": \"2019-08-08\",\r\n    \"Description\":\"some description 2\",\r\n    \"Version\":0,\r\n    \"id\":\"5a955556-da0b-4bb3-a24d-d284b4a1165a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44384/weatherforecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44384/weatherforecast?id=065b046c-10a2-4745-815b-b0d25f13e914",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"weatherforecast"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "065b046c-10a2-4745-815b-b0d25f13e914"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
