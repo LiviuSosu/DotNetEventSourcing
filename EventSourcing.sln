@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing", "EventSourcing.csproj", "{D7CBAC62-3D47-4E0B-99CE-BE74CB764AB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing", "EventSourcing.csproj", "{D7CBAC62-3D47-4E0B-99CE-BE74CB764AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing-Core", "..\EventSourcing-Core\EventSourcing-Core.csproj", "{A3A7B9CC-5FF7-4787-BBB0-E173443354B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D7CBAC62-3D47-4E0B-99CE-BE74CB764AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CBAC62-3D47-4E0B-99CE-BE74CB764AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7CBAC62-3D47-4E0B-99CE-BE74CB764AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A7B9CC-5FF7-4787-BBB0-E173443354B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A7B9CC-5FF7-4787-BBB0-E173443354B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A7B9CC-5FF7-4787-BBB0-E173443354B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A7B9CC-5FF7-4787-BBB0-E173443354B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
