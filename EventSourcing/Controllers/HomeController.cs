@@ -1,4 +1,5 @@
 using EventSourcing.Models;
+using EventSourcing_Core.Reporting;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,12 +8,13 @@ namespace EventSourcing.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        List<DiaryItemModel> diaryItemModels;
+        private readonly IReportDatabase reportDatabase;
+        List<DiaryItemDto> diaryItemModels;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IReportDatabase reportDatabase)
         {
             _logger = logger;
-            diaryItemModels = new List<DiaryItemModel>
+            diaryItemModels = new List<DiaryItemDto>
             {
                 new()
                 {
@@ -25,11 +27,25 @@ namespace EventSourcing.Controllers
                     From = new DateTime(2018,12,30)
                 }
             };
+
+            this.reportDatabase = reportDatabase;
         }
 
         public IActionResult Index()
         {
+            var x = reportDatabase.GetItems();
             return View(diaryItemModels);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(DiaryItemDto item)
+        {
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

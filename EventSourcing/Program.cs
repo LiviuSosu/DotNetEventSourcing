@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IReportDatabase, ReportDatabase>();
+builder.Services.AddScoped<IReportDatabase, ReportDatabase>(); //Singleton?
 
 var app = builder.Build();
 
