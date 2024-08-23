@@ -12,9 +12,6 @@ namespace EventSourcing_Core.Utils
             _commandBus = commandBus;
         }
 
-        public virtual Task<TResponse> Handle(TRequest message, CancellationToken cancellationToken)
-        {
-            return _commandBus.Send();
-        }
+        public abstract Task<TResponse> Handle(TRequest message, CancellationToken cancellationToken);
     }
 }

@@ -1,5 +1,7 @@
 using EventSourcing.Models;
+using EventSourcing_Core.Commands;
 using EventSourcing_Core.Reporting;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -10,8 +12,9 @@ namespace EventSourcing.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IReportDatabase reportDatabase;
         List<DiaryItemDto> diaryItemModels;
+        protected IMediator _mediator;
 
-        public HomeController(ILogger<HomeController> logger, IReportDatabase reportDatabase)
+        public HomeController(ILogger<HomeController> logger, IReportDatabase reportDatabase, IMediator mediator)
         {
             _logger = logger;
             diaryItemModels = new List<DiaryItemDto>
@@ -29,6 +32,7 @@ namespace EventSourcing.Controllers
             };
 
             this.reportDatabase = reportDatabase;
+            _mediator = mediator;
         }
 
         public IActionResult Index()
@@ -43,8 +47,9 @@ namespace EventSourcing.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(DiaryItemDto item)
+        public async Task<IActionResult> Create(DiaryItemDto item)
         {
+            await _mediator.Send(item);
             return RedirectToAction("Index");
         }
 

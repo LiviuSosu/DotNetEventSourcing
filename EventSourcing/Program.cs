@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IReportDatabase, ReportDatabase>(); //Singleton?
 //builder.Services.AddScoped<ICommandHandlerFactory, StructureMapCommandHandlerFactory>();
-builder.Services.AddTransient<ICommandBus, CommandBus>();
+//builder.Services.AddTransient<ICommandBus, CommandBus>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BaseHandler<,>).Assembly));
 
 var app = builder.Build();
