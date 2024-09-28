@@ -4,7 +4,7 @@ namespace EventSourcing_Core.CommandHandlers
 {
     public class CreateItemCommandHandler : ICommandHandler<CreateItemCommand>
     {
-       // private IRepository<DiaryItem> _repository;
+        private IRepository<DiaryItem> _repository;
 
         public void Execute(CreateItemCommand command)
         {
