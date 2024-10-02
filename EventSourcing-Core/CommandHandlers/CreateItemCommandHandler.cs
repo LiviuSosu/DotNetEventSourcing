@@ -1,4 +1,5 @@
 ﻿using EventSourcing_Core.Commands;
+using EventSourcing_Core.Storage;
 
 namespace EventSourcing_Core.CommandHandlers
 {

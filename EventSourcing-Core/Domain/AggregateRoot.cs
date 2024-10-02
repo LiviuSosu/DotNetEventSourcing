@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventSourcing_Core.Events;
+using Microsoft.Extensions.Logging;
 
 namespace EventSourcing_Core.Domain
 {
-    internal class AggregateRoot
+    public class AggregateRoot : IEventProvider
     {
+        private readonly List<Event> _changes;
     }
 }
